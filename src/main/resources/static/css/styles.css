@@ -1,0 +1,102 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.viewMain {
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.welcome {
+	margin-bottom: 30px;
+}
+
+.viewThouhgts {
+    width: 500px;
+    margin-top: 30px;
+}
+
+.main {
+	display: flex;
+}
+
+.col {
+	flex: 2;
+}
+
+.books {
+	width: 75%;
+}
+
+.welcome {
+	display: flex;
+	justify-content: space-between;
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 3px solid black;
+}
+
+.editBtn {
+	margin-top: 30px;
+  background-color: #81c7f5;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  cursor: pointer;
+}
+
+.deleteBtn {
+	margin-top: 30px;
+  background-color: #ec391a;
+  color: black;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 16px;
+  border: 2px solid black;
+  box-shadow: 3px 3px black;
+  cursor: pointer;
+}
+
+.bottomButton {
+	display: flex;
+	justify-content: flex-start;
+	padding-right: 100px;
+}
+
+.thoughts {
+	margin-top: 10px;
+	margin-left: 100px;
+	padding-left: 10px;
+	border: none;
+	border-top: 5px groove black;
+	border-bottom: 5px groove black;
+}
+
+h6 {
+	margin-left: 30px;
+}
+
+table, th, td{
+  border: 1px double black;
+}
+
+.blueText {
+	color: #158aff;
+}
+
