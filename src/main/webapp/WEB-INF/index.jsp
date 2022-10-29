@@ -18,61 +18,64 @@
 <title>Show Manager</title>
 </head>
 
-<body>
+<body class=darkMode>
 	<div class=wrapper>
 		<div class=header>
-			<h1 class="blueText">TV Shows Database</h1>
+			<h1 class="blueText">TV Shows Application</h1>
 		</div>
 		<div class=main>
-			<div class=col>
-				<h1>Register</h1>
+			<div class=login>
+				<h1 class=loginHdr>Register</h1>
 				<form:form action="/register" method="post" modelAttribute="newUser">
-					<p>
+					<p class=loginRow>
 						<form:label path="userName">User Name:</form:label>
 						<form:input path="userName" />
 						<form:errors class="text-danger" path="userName" />
 					</p>
 
-					<p>
+					<p class=loginRow>
 						<form:label path="email">Email:</form:label>
 						<form:input path="email" />
 						<form:errors class="text-danger" path="email" />
 					</p>
 
-					<p>
+					<p class=loginRow>
 						<form:label path="password">Password:</form:label>
 						<form:password path="password" />
 						<form:errors class="text-danger" path="password" />
 					</p>
 
-					<p>
+					<p class=loginRow>
 						<form:label path="confirm">Confirm PW:</form:label>
 						<form:password path="confirm" />
 						<form:errors class="text-danger" path="confirm" />
 					</p>
-
-					<button>Register</button>
+					<p class=botBtn>
+						<button class=loginBtn>Register</button>
+					</p>
 				</form:form>
 			</div>
 
-			<div class=col>
-				<h1>Log In</h1>
-				<h2>Message: <c:out value="${message}">${message}</c:out></h2>
+			<div class=login>
+				<h1 class=loginHdr>Log In</h1>
+				<p>Message: <c:out value="${message}">${message}</c:out></p>
 				<form:form action="/login" method="post" modelAttribute="newLogin">
 
-					<p>
+					<p class=loginRow>
 						<form:label path="email">Email:</form:label>
 						<form:errors class="text-danger" path="email" />
 						<form:input path="email" />
 					</p>
 
-					<p>
+					<p class=loginRow>
 						<form:label path="password">Password:</form:label>
 						<form:errors class="text-danger" path="password" />
 						<form:password path="password" />
 					</p>
 
-					<button>Login</button>
+					<p class=botBtn>
+						<button class=loginBtn>Log In</button>
+					</p>
 				</form:form>
 			</div>
 		</div>

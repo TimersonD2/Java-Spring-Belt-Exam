@@ -5,6 +5,14 @@
 	padding: 0px;
 }
 
+.darkMode {
+	color: white;
+	background-color: black;
+}
+
+.login {
+}
+
 .wrapper {
     width: 1000px;
     margin: 0 auto;
@@ -27,11 +35,58 @@
 }
 
 .main {
+	padding: 20px;
+	border: 10px;
+	border-color: white;
+	border-style: double;
 	display: flex;
+	justify-content: space-around;
 }
 
-.col {
-	flex: 2;
+label {
+	font-family: cursive;
+	font-weight: bolder;
+}
+
+input {
+	width: 250px;
+}
+
+.loginRow {
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.login {
+	padding:10px;
+	width: 400px;
+	border: solid 4px;
+	border-color: white;
+}
+
+.botBtn {
+	display: flex;
+	justify-content: center;
+}
+
+.loginHdr {
+	margin-bottom: 30px;
+	text-align: center;
+	font-family: cursive;
+}
+
+.loginBtn {
+	margin-top: 20px;
+	background-color: #00ffff;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bolder;
+	border: 2px solid white;
+	box-shadow: 3px 3px white;
+	cursor: pointer;
 }
 
 .books {
@@ -43,34 +98,33 @@
 	justify-content: space-between;
 }
 
-.title {
-	display: flex;
+.titlergb(181, 245, 249), 248, 251)splay: flex;
 	justify-content: space-between;
 	border-bottom: 3px solid black;
 }
 
 .editBtn {
 	margin-top: 30px;
-  background-color: #81c7f5;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 16px;
-  border: 2px solid black;
-  box-shadow: 3px 3px black;
-  cursor: pointer;
+	background-color: #81c7f5;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 16px;
+	border: 2px solid black;
+	box-shadow: 3px 3px black;
+	cursor: pointer;
 }
 
 .deleteBtn {
 	margin-top: 30px;
-  background-color: #ec391a;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 16px;
-  border: 2px solid black;
-  box-shadow: 3px 3px black;
-  cursor: pointer;
+	background-color: #ec391a;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 16px;
+	border: 2px solid black;
+	box-shadow: 3px 3px black;
+	cursor: pointer;
 }
 
 .bottomButton {
@@ -97,6 +151,6 @@ table, th, td{
 }
 
 .blueText {
-	color: #158aff;
+	color: aqua;
 }
 
