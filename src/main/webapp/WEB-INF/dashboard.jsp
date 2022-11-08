@@ -19,7 +19,7 @@
 
 <title>Show Manager Dashboard</title>
 </head>
-<body>
+<body class=darkMode>
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
@@ -35,20 +35,21 @@
 		</div>
 
 		<h3>TV Shows</h3>
-		<table class="books">
+		<table>
 			<thead>
-				<tr>
-					<th>Show</th>
-					<th>Network</th>
-					<th>Average Rating</th>
+				<tr class="tblHdr">
+					<th class="tblHdr">Show</th>
+					<th class="tblHdr">Network</th>
+					<th class="tblHdr">Average Rating</th>
+					<th class="tblHdr">Posted By</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${allShows}" var="show">
-					<tr>
-						<td><a href="/viewShow/${show.id}">${show.title}</a></td>
-						<td><c:out value="${show.network}"></c:out></td>
-						<td><c:out value="${show.rating}"></c:out></td>
+					<tr class="tblRow">
+						<td class="tblData"><a href="/viewShow/${show.id}">${show.title}</a></td>
+						<td class="tblData"><c:out value="${show.network}"></c:out></td>
+						<td class="tblData"><c:out value="${show.rating}"></c:out></td>
 					</tr>
 				</c:forEach>
 			</tbody>

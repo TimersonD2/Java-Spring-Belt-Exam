@@ -30,24 +30,32 @@
 					<p class=loginRow>
 						<form:label path="userName">User Name:</form:label>
 						<form:input path="userName" />
+					</p>
+					<p>
 						<form:errors class="text-danger" path="userName" />
 					</p>
 
 					<p class=loginRow>
 						<form:label path="email">Email:</form:label>
 						<form:input path="email" />
+					</p>
+					<p>
 						<form:errors class="text-danger" path="email" />
 					</p>
 
 					<p class=loginRow>
 						<form:label path="password">Password:</form:label>
 						<form:password path="password" />
+					</p>
+					<p>
 						<form:errors class="text-danger" path="password" />
 					</p>
 
 					<p class=loginRow>
 						<form:label path="confirm">Confirm PW:</form:label>
 						<form:password path="confirm" />
+					</p>
+					<p>
 						<form:errors class="text-danger" path="confirm" />
 					</p>
 					<p class=botBtn>
@@ -63,14 +71,18 @@
 
 					<p class=loginRow>
 						<form:label path="email">Email:</form:label>
-						<form:errors class="text-danger" path="email" />
 						<form:input path="email" />
+					</p>
+					<p>
+						<form:errors class="text-danger" path="email" />
 					</p>
 
 					<p class=loginRow>
 						<form:label path="password">Password:</form:label>
-						<form:errors class="text-danger" path="password" />
 						<form:password path="password" />
+					</p>
+					<p>
+						<form:errors class="text-danger" path="password" />
 					</p>
 
 					<p class=botBtn>

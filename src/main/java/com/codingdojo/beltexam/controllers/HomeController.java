@@ -39,6 +39,7 @@ public class HomeController {
     	model.addAttribute("allShows", showService.getAllShows());
         User user = userService.getUser(userId);
         model.addAttribute("validUser", user);
+        model.addAttribute("allUsers", userService.getAllUsers());
 
       	return "dashboard.jsp";
     }

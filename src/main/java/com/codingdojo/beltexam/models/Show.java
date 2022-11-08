@@ -99,7 +99,8 @@ public class Show {
 		this.rating = rating;
 	}
 
-	public User getUser() {
+
+    public User getUser() {
 		return user;
 	}
 
