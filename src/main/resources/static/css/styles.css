@@ -10,6 +10,10 @@
 	background-color: black;
 }
 
+a {
+	color: aqua;
+}
+
 .tblHdr {
 	height: 3rem;
 	border: 5px double white;

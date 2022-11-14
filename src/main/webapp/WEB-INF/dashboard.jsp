@@ -34,30 +34,33 @@
 			</div>
 		</div>
 
-		<h3>TV Shows</h3>
-		<table>
-			<thead>
-				<tr class="tblHdr">
-					<th class="tblHdr">Show</th>
-					<th class="tblHdr">Network</th>
-					<th class="tblHdr">Average Rating</th>
-					<th class="tblHdr">Posted By</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${allShows}" var="show">
-					<tr class="tblRow">
-						<td class="tblData"><a href="/viewShow/${show.id}">${show.title}</a></td>
-						<td class="tblData"><c:out value="${show.network}"></c:out></td>
-						<td class="tblData"><c:out value="${show.rating}"></c:out></td>
+		<div class="dashMain">
+			<h3>TV Shows</h3>
+			<table>
+				<thead>
+					<tr class="tblHdr">
+						<th class="tblHdr">Show</th>
+						<th class="tblHdr">Network</th>
+						<th class="tblHdr">Average Rating</th>
+						<th class="tblHdr">Posted By</th>
 					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
-		<div class="bottomButton">
-			<form:form action="/addShow" method="get">
-				<button class="editBtn">Add a Show</button>
-			</form:form>
+				</thead>
+				<tbody>
+					<c:forEach items="${allShows}" var="show">
+						<tr class="tblRow">
+							<td class="tblData"><a href="/viewShow/${show.id}">${show.title}</a></td>
+							<td class="tblData"><c:out value="${show.network}"></c:out></td>
+							<td class="tblData"><c:out value="${show.rating}"></c:out></td>
+							<td class="tblData"><c:out value="${show.user.userName}"></c:out></td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+			<div class="bottomButton">
+				<form:form action="/addShow" method="get">
+					<button class="editBtn">Add a Show</button>
+				</form:form>
+			</div>
 		</div>
 	</div>
 
