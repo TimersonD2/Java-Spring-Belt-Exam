@@ -23,7 +23,7 @@
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
-				<h1 class="blueText">Edit Your Show</h1>
+				<h1 class="blueText">Edit the Show</h1>
 				<h6>
 					<a class="links" href="/dashboard">Back to DashBoard</a>
 				</h6>
@@ -38,9 +38,7 @@
 					<form:label class="blueLabel" path="title">Title:</form:label>
 					<form:input class="inputBgrnd" path="title" />
 				</p>
-				<p>
-					<form:errors class="text-danger" path="title" />
-				</p>
+				<form:errors class="text-danger" path="title" />
 
 				<p class="editRow">
 					<form:label class="blueLabel" path="network">Network:</form:label>
@@ -64,15 +62,6 @@
 			        <button class="loginBtn">Update</button>
 		    	</div>
 		    </form:form>
-
-		</div>
-		
-		<div class="bottomButton">
-			<c:if test="${sessionScope.userId == show.user.id}">
-				<form:form action="/deleteShow/${show.id}" method="delete">
-					<button class="deleteBtn">Delete Show</button>
-				</form:form>
-			</c:if>
 		</div>
 	</div>
 </body>

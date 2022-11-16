@@ -15,7 +15,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
+//import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -30,16 +30,13 @@ public class Show {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NotEmpty(message="Network Is Required!")
-    @Size(min=3, max=100, message="Network must be between 3 and 100 characters")
+    @Size(min=3, max=50, message="Network must be between 3 and 50 characters")
     private String network;
     
-    @NotEmpty(message="Show Title Is Required")
-    @Size(min=1, max=200, message="Title must be between 1 and 200 characters")
+    @Size(min=1, max=100, message="Title must be between 1 and 100 characters")
     private String title;
     
-    @NotEmpty(message="Description Title Is Required")
-    @Size(min=1, max=200, message="Description must be between 1 and 200 characters")
+    @Size(min=1, max=200, message="Thoughts must be between 1 and 200 characters")
     private String description;
 
     @NotNull(message="Rating must be between 1 and 10")

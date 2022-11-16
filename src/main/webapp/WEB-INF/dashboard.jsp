@@ -17,7 +17,7 @@
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
-<title>Show Manager Dashboard</title>
+<title>Show Dashboard</title>
 </head>
 <body class=darkMode>
 	<div class="wrapper">
@@ -36,7 +36,7 @@
 			<h3 class="blueText">TV Shows</h3>
 			<table>
 				<thead>
-					<tr class="tblHdr">
+					<tr class="tblRow">
 						<th class="tblHdr">Show</th>
 						<th class="tblHdr">Network</th>
 						<th class="tblHdr">Rating</th>

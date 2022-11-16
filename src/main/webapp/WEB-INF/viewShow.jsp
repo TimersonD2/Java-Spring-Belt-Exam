@@ -34,13 +34,16 @@
 				<h5 class="blueText">Thoughts about the show:</h5>
 				<textarea class="thoughts" rows="10" cols="60">${show.description}</textarea>
 	
-				<div class="botBtn">
-					<c:if test="${sessionScope.userId == show.user.id}">
+				<c:if test="${sessionScope.userId == show.user.id}">
+					<div class="botBtn">
 						<form:form action="/editShow/${show.id}" method="get">
-							<button class="loginBtn">edit</button>
+							<button class="loginBtn">Edit Show</button>
 						</form:form>
-					</c:if>
-				</div>
+						<form:form action="/deleteShow/${show.id}" method="delete">
+							<button class="deleteBtn">Delete Show</button>
+						</form:form>
+					</div>
+				</c:if>
 			</div>
 		</div>
 	</div>

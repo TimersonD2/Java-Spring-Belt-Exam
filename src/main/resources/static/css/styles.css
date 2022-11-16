@@ -19,10 +19,14 @@
 }
 
 .tblHdr {
+	color: aqua;
+	padding: 1rem;;
 	height: 3rem;
 	border: 5px double white;
 	text-align: center;
 	font-size: x-large;
+	font-family: cursive;
+	font-weight: normal;
 }
 
 .tblRow {
@@ -133,6 +137,21 @@ input {
 	cursor: pointer;
 }
 
+.deleteBtn {
+	margin-top: 20px;
+	margin-left: 40px;
+	background-color: #ec391a;
+	width: 9rem;
+	color: black;
+	padding: 10px 20px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bolder;
+	border: 2px solid white;
+	box-shadow: 3px 3px white;
+	cursor: pointer;
+}
+
 .books {
 	width: 75%;
 }
@@ -147,18 +166,6 @@ input {
 	margin-top: 30px;
 	background-color: #81c7f5;
 	color: white;
-	padding: 10px 20px;
-	text-align: center;
-	font-size: 16px;
-	border: 2px solid black;
-	box-shadow: 3px 3px black;
-	cursor: pointer;
-}
-
-.deleteBtn {
-	margin-top: 30px;
-	background-color: #ec391a;
-	color: black;
 	padding: 10px 20px;
 	text-align: center;
 	font-size: 16px;
@@ -200,3 +207,8 @@ input {
 	border: solid 3px white;
 }
 
+.errorText {
+	color: red;
+	margin: 0px;
+	padding: 0px;
+}

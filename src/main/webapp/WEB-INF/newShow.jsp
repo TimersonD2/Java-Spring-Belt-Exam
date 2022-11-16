@@ -38,8 +38,8 @@
 					<form:label class="blueLabel" path="title">Title:</form:label>
 					<form:input class="inputBgrnd" path="title" />
 				</p>
+					<form:errors class="errorText" path="title" />
 				<p>
-					<form:errors class="text-danger" path="title" />
 				</p>
 
 				<p class="editRow">
