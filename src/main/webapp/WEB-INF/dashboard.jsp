@@ -23,32 +23,30 @@
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
-				<h1>
+				<h1 class="blueText">
 					Welcome,
 					<c:out value="${validUser.userName}"></c:out>
 				</h1>
-				<h3>${message}</h3>
+				<a class="links" href="/logout">Logout</a>
 			</div>
-			<div class="links">
-				<a href="/logout">Logout</a>
-			</div>
+			<h4 class="welcomeBack">${message}</h4>
 		</div>
 
 		<div class="dashMain">
-			<h3>TV Shows</h3>
+			<h3 class="blueText">TV Shows</h3>
 			<table>
 				<thead>
 					<tr class="tblHdr">
 						<th class="tblHdr">Show</th>
 						<th class="tblHdr">Network</th>
-						<th class="tblHdr">Average Rating</th>
+						<th class="tblHdr">Rating</th>
 						<th class="tblHdr">Posted By</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${allShows}" var="show">
 						<tr class="tblRow">
-							<td class="tblData"><a href="/viewShow/${show.id}">${show.title}</a></td>
+							<td class="tblData"><a class="links" href="/viewShow/${show.id}">${show.title}</a></td>
 							<td class="tblData"><c:out value="${show.network}"></c:out></td>
 							<td class="tblData"><c:out value="${show.rating}"></c:out></td>
 							<td class="tblData"><c:out value="${show.user.userName}"></c:out></td>
@@ -58,7 +56,7 @@
 			</table>
 			<div class="bottomButton">
 				<form:form action="/addShow" method="get">
-					<button class="editBtn">Add a Show</button>
+					<button class="loginBtn">Add a Show</button>
 				</form:form>
 			</div>
 		</div>

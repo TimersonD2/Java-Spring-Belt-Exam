@@ -19,39 +19,50 @@
 
 <title>Edit TV Show</title>
 </head>
-<body>
-	<div class=wrapper>
-		<div class=welcome>
-			<h1>Change Your Entry</h1>
-			<h6>
-				<a href="/dashboard">Back to DashBoard</a>
-			</h6>
+<body class="darkMode">
+	<div class="wrapper">
+		<div class="welcome">
+			<div class="message">
+				<h1 class="blueText">Edit Your Show</h1>
+				<h6>
+					<a class="links" href="/dashboard">Back to DashBoard</a>
+				</h6>
+			</div>
 		</div>
-		<div>
+		<div class="viewMain">
 		    <form:form action="/updateShow/${show.id}" method="put" modelAttribute="show">
 		    	<p>
 		    	<form:hidden path="user"/>
 		    	</p>
+				<p class="editRow">
+					<form:label class="blueLabel" path="title">Title:</form:label>
+					<form:input class="inputBgrnd" path="title" />
+				</p>
 				<p>
-					<form:label path="title">Title:</form:label>
 					<form:errors class="text-danger" path="title" />
-					<form:input path="title" />
 				</p>
 
+				<p class="editRow">
+					<form:label class="blueLabel" path="network">Network:</form:label>
+					<form:input class="inputBgrnd" path="network" />
+				</p>
 				<p>
-					<form:label path="network">Network:</form:label>
 					<form:errors class="text-danger" path="network" />
-					<form:input path="network" />
 				</p>
 
 				<p>
-					<form:label path="description">Description:</form:label>
-					<form:errors class="text-danger" path="description" />
-					<form:textarea rows="10" cols="60" path="description" />
+					<form:label class="blueLabel" path="description">Thoughts about the show:</form:label>
+					<form:textarea class="thoughts" rows="10" cols="60" path="description" />
 				</p>
+				<p>
+					<form:errors class="text-danger" path="description" />
+				</p>
+
 				<form:hidden path="rating" value="5"/>
 		    	
-		        <button>Update</button>
+		    	<div class="botBtn">
+			        <button class="loginBtn">Update</button>
+		    	</div>
 		    </form:form>
 
 		</div>
