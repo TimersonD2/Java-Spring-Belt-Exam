@@ -13,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
@@ -27,13 +29,19 @@ public class Show {
     private Long id;
 
     @NotBlank
-    @Size(min=3, max=100, message="Title moust have 3-100 chararcters")
+    @Size(min=3, max=100, message="Title must have 3-100 characters")
     private String title;
     
+    @NotBlank
+    @Size(min=3, max=250, message="Thoughts must have 3-250 characters")
     private String description;
     
+    @NotBlank
+    @Size(min=3, max=20, message="Network must have 3-20 characters")
     private String network;
     
+    @Min(0)
+    @Max(10)
     private int rating;
     
     @Column(updatable=false)
