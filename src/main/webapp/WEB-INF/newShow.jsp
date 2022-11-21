@@ -50,9 +50,17 @@
 					<form:errors class="text-danger" path="network" />
 				</p>
 
+				<p class="editRow">
+					<form:label class="blueLabel" path="rating">Rating:</form:label>
+					<form:input class="inputBgrnd" type="number" path="rating" />
+				</p>
+				<p>
+					<form:errors class="text-danger" path="rating" />
+				</p>
+
 				<p>
 					<form:label class="blueLabel" path="description">Thoughts about the show:</form:label>
-					<form:textarea class="thoughts" rows="10" cols="60" path="description" />
+					<form:textarea class="thoughts" rows="6" cols="60" path="description" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="description" />
