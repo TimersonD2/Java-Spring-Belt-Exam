@@ -23,7 +23,7 @@
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
-				<h1 class="blueText">Edit the Show</h1>
+				<h1 class="blueText">Edit TV Show</h1>
 				<h6>
 					<a class="links" href="/dashboard">Back to DashBoard</a>
 				</h6>
@@ -32,13 +32,15 @@
 		<div class="viewMain">
 		    <form:form action="/updateShow/${show.id}" method="put" modelAttribute="show">
 		    	<p>
-		    	<form:hidden path="user"/>
+		   		 	<form:hidden path="user"/>
 		    	</p>
 				<p class="editRow">
 					<form:label class="blueLabel" path="title">Title:</form:label>
 					<form:input class="inputBgrnd" path="title" />
 				</p>
-				<form:errors class="text-danger" path="title" />
+				<p>
+					<form:errors class="text-danger" path="title" />
+				</p>
 
 				<p class="editRow">
 					<form:label class="blueLabel" path="network">Network:</form:label>

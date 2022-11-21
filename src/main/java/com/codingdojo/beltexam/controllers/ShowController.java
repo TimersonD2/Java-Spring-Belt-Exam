@@ -74,8 +74,8 @@ public class ShowController {
     }
 
     @PutMapping("/updateShow/{id}")
-    public String updateBook(@Valid @PathVariable Long id, 
-    		@ModelAttribute("show") Show show, BindingResult results, 
+    public String updateBook(@PathVariable Long id, 
+    		@Valid @ModelAttribute("show") Show show, BindingResult results, 
     		Model model, HttpSession session, RedirectAttributes redirectAttributes) {
     	
         if(results.hasErrors()) {

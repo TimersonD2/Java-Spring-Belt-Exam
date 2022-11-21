@@ -13,108 +13,99 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-//import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-
 @Entity
 @Table(name="shows")
 public class Show {
-	
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Size(min=3, max=50, message="Network must be between 3 and 50 characters")
-    private String network;
-    
-    @Size(min=1, max=100, message="Title must be between 1 and 100 characters")
+
+    @NotBlank
+    @Size(min=3, max=100, message="Title moust have 3-100 chararcters")
     private String title;
     
-    @Size(min=1, max=200, message="Thoughts must be between 1 and 200 characters")
     private String description;
-
-    @NotNull(message="Rating must be between 1 and 10")
-    @Min(1)
-    @Max(10)
+    
+    private String network;
+    
     private int rating;
     
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
-
+    
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
-
-//    Define Relationship
+    
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="user_id")
     private User user;
 
-	public Long getId() {
-		return id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getNetwork() {
-		return network;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setNetwork(String network) {
-		this.network = network;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
+    
 
-	public String getDescription() {
-		return description;
-	}
+    public String getNetwork() {
+        return network;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setNetwork(String network) {
+        this.network = network;
+    }
 
-	public int getRating() {
-		return rating;
-	}
+    public int getRating() {
+        return rating;
+    }
 
-	public void setRating(int rating) {
-		this.rating = rating;
-	}
-
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
 
     public User getUser() {
-		return user;
-	}
+        return user;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-
-
-	@PrePersist
-    protected void onCreate(){
+    public void setUser(User user) {
+        this.user = user;
+    }
+    
+    
+    @PrePersist
+    protected void onCreate() {
         this.createdAt = new Date();
     }
-	
+    
     @PreUpdate
-    protected void onUpdate(){
+    protected void onUpdate() {
         this.updatedAt = new Date();
     }
     
-
 }
