@@ -59,6 +59,16 @@
 					<button class="loginBtn">Add a Show</button>
 				</form:form>
 			</div>
+			<div class="cardsMain">
+				<c:forEach items="${allShows}" var="show">
+					<div class="showCard">
+						<a class="links" href="/viewShow/${show.id}">${show.title}</a>
+						<p class="blueText">Network: ${show.network}</p>
+						<p class="blueText">Rating: ${show.rating}</p>
+						<img class="showImg" alt="No Immage Available" src="${show.imgUrl}">
+					</div>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 

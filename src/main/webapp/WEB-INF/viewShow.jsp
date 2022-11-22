@@ -34,7 +34,8 @@
 			
 			<div class="viewThoughts">
 				<h5 class="blueText">Thoughts about the show:</h5>
-				<textarea class="thoughts" rows="10" cols="60">${show.description}</textarea>
+				<textarea class="thoughts" rows="6" cols="60">${show.description}</textarea>
+				<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
 	
 				<c:if test="${sessionScope.userId == show.user.id}">
 					<div class="botBtn">

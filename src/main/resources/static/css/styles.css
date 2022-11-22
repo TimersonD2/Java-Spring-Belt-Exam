@@ -56,6 +56,37 @@ table {
     justify-content: space-around;
 }
 
+.cardsMain {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.showCard {
+	background-color: black;
+	color: white;
+	height:15rem;
+	width: 15rem;
+	border: 3px solid white;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.showImg {
+	height: 5rem;
+	width: 8rem;
+}
+
+.viewImg {
+	height: 10rem;
+	width: 16rem;
+}
+
 .dashMain {
 	margin-left: 8rem;
     width: 800px;

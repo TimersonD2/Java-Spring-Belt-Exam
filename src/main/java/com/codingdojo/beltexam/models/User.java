@@ -56,6 +56,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private List<Show> shows;
     
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private List<Comment> comments;
+
     public User() {}
 
 	public Long getId() {
@@ -97,18 +100,24 @@ public class User {
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
-    
-	
-	
-//	public List<Book> getBooks() {
-//		return books;
-//	}
-//
-//	public void setBooks(List<Book> books) {
-//		this.books = books;
-//	}
 
-	@PrePersist
+	public List<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(List<Show> shows) {
+        this.shows = shows;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
+    @PrePersist
     protected void onCreate(){
         this.createdAt = new Date();
     }

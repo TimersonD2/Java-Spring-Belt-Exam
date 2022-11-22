@@ -1,7 +1,9 @@
 package com.codingdojo.beltexam.models;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -44,6 +47,8 @@ public class Show {
     @Max(10)
     private int rating;
     
+    private String imgUrl;
+    
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
@@ -55,6 +60,9 @@ public class Show {
     @JoinColumn(name="user_id")
     private User user;
 
+    @OneToMany(mappedBy = "show", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private List<Comment> comments;
+    
     public Long getId() {
         return id;
     }
@@ -78,8 +86,6 @@ public class Show {
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    
 
     public String getNetwork() {
         return network;
@@ -97,6 +103,14 @@ public class Show {
         this.rating = rating;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
     public User getUser() {
         return user;
     }
@@ -105,7 +119,14 @@ public class Show {
         this.user = user;
     }
     
-    
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
+    }
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = new Date();
