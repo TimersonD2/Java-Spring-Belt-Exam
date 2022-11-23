@@ -70,6 +70,14 @@
 				</c:forEach>
 			</div>
 		</div>
+		<div class="viewMain">
+			<c:forEach items="${validUser.comments}" var="item">
+				<div class="viewThoughts">
+					<h5 class="blueText">Comment on ${item.show.title}</h5>
+					<textarea class="thoughts" rows="6" cols="60">${item.comment}</textarea>
+				</div>
+			</c:forEach>
+		</div>
 	</div>
 
 </body>
