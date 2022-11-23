@@ -1,5 +1,7 @@
 package com.codingdojo.beltexam.services;
 
+//import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,8 +28,11 @@ public class CommentService {
         Show show = showService.getShow(showId);
         comment.setShow(show);
         User user = userService.getUser(userId);
-        show.setUser(user);
+        comment.setUser(user);
         return commentRepo.save(comment);
     }
 
+    
+    
+    
 }

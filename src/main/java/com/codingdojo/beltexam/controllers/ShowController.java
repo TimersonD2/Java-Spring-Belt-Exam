@@ -15,7 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.codingdojo.beltexam.models.Comment;
 import com.codingdojo.beltexam.models.Show;
+import com.codingdojo.beltexam.services.CommentService;
 import com.codingdojo.beltexam.services.ShowService;
 import com.codingdojo.beltexam.services.UserService;
 
@@ -28,6 +30,9 @@ public class ShowController {
 	@Autowired
 	private ShowService showService;
 	
+	@Autowired
+	private CommentService commentService;
+	
     @GetMapping("/addShow")
     public String createBook(@ModelAttribute("newShow") Show show, HttpSession session) {
     	
@@ -37,7 +42,7 @@ public class ShowController {
     }
 
     @PostMapping("/saveShow")
-    public String saveBook(@Valid @ModelAttribute("newShow") Show show, BindingResult results, 
+    public String saveShow(@Valid @ModelAttribute("newShow") Show show, BindingResult results, 
     		Model model, HttpSession session, RedirectAttributes redirectAttributes) {
 
         if(results.hasErrors()) {
@@ -55,7 +60,8 @@ public class ShowController {
     }
 
     @GetMapping("/viewShow/{id}")
-    public String viewShow(@PathVariable Long id, Model model, HttpSession session) {
+    public String viewShow(@PathVariable Long id, @ModelAttribute("newComment") Comment comment, 
+            Model model, HttpSession session) {
     	
     	if(userService.getSessionUser(session) == null) return "redirect:/";
     	
@@ -100,6 +106,23 @@ public class ShowController {
     	return "redirect:/dashboard";
     }
 
+    @PostMapping("/saveComment/{showId}")
+    public String saveComment(@PathVariable Long showId, @Valid @ModelAttribute("newComment") Comment comment, BindingResult results, 
+            Model model, HttpSession session, RedirectAttributes redirectAttributes) {
+
+        if(results.hasErrors()) {
+            model.addAttribute("newComment", comment);
+            return "viewShow.jsp";
+        }
+        
+        Long userId = (Long) session.getAttribute("userId");
+        if(userId == null) return "redirect:/";
+        
+        commentService.createComment(showId, userId, comment);
+        redirectAttributes.addFlashAttribute("message", "Your Comment Has Been Saved");
+
+        return "redirect:/dashboard";
+    }
     
     
     

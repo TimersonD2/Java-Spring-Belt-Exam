@@ -49,6 +49,40 @@
 				</c:if>
 			</div>
 		</div>
+		
+		<div class="viewMain">
+			<form:form action="/saveComment/${show.id}" method="post" modelAttribute="newComment">
+		    	<p>
+		    	<form:hidden path="user"/>
+		    	</p>
+		    	<p>
+		    	<form:hidden path="show"/>
+		    	</p>
+		    	
+				<p>
+					<form:label class="blueLabel" path="comment">Comment about the show:</form:label>
+					<form:textarea class="thoughts" rows="6" cols="60" path="comment" />
+				</p>
+				<p>
+					<form:errors class="text-danger" path="comment" />
+				</p>
+
+		    	<div class="botBtn">
+			        <button class="loginBtn">Add Comment</button>
+		    	</div>
+			</form:form>
+		</div>
+		
+		<div class="viewMain">
+			<c:forEach items="${show.comments}" var="item">
+				<div class="viewThoughts">
+					<h5 class="blueText">${item.user.userName} thoughts...</h5>
+					<textarea class="thoughts" rows="6" cols="60">${item.comment}</textarea>
+				</div>
+			</c:forEach>
+		</div>
+		
+		
 	</div>
 
 </body>
