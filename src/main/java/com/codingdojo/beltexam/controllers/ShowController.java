@@ -1,5 +1,7 @@
 package com.codingdojo.beltexam.controllers;
 
+//import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -17,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.beltexam.models.Comment;
 import com.codingdojo.beltexam.models.Show;
+import com.codingdojo.beltexam.models.User;
 import com.codingdojo.beltexam.services.CommentService;
 import com.codingdojo.beltexam.services.ShowService;
 import com.codingdojo.beltexam.services.UserService;
@@ -122,6 +125,20 @@ public class ShowController {
         redirectAttributes.addFlashAttribute("message", "Your Comment Has Been Saved");
 
         return "redirect:/dashboard";
+    }
+    
+    @GetMapping("/myComments")
+    public String myComments(HttpSession session, Model model) {
+        
+        Long userId = (Long) session.getAttribute("userId");
+        if(userService.getSessionUser(session) == null) return "redirect:/";
+
+        model.addAttribute("allShows", showService.getAllShows());
+        User user = userService.getUser(userId);
+        model.addAttribute("validUser", user);
+//        model.addAttribute("allUsers", userService.getAllUsers());
+
+        return "comments.jsp";
     }
     
     

@@ -27,6 +27,7 @@
 					Welcome,
 					<c:out value="${validUser.userName}"></c:out>
 				</h1>
+				<a class="links" href="/myComments">My Comments</a>
 				<a class="links" href="/logout">Logout</a>
 			</div>
 			<h4 class="welcomeBack">${message}</h4>
