@@ -19,8 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.beltexam.models.Comment;
 import com.codingdojo.beltexam.models.Show;
-import com.codingdojo.beltexam.models.User;
-import com.codingdojo.beltexam.services.CommentService;
+//import com.codingdojo.beltexam.models.User;
+//import com.codingdojo.beltexam.services.CommentService;
 import com.codingdojo.beltexam.services.ShowService;
 import com.codingdojo.beltexam.services.UserService;
 
@@ -32,9 +32,6 @@ public class ShowController {
 	
 	@Autowired
 	private ShowService showService;
-	
-	@Autowired
-	private CommentService commentService;
 	
     @GetMapping("/addShow")
     public String createBook(@ModelAttribute("newShow") Show show, HttpSession session) {
@@ -109,47 +106,5 @@ public class ShowController {
     	return "redirect:/dashboard";
     }
 
-    @PostMapping("/saveComment/{showId}")
-    public String saveComment(@PathVariable Long showId, @Valid @ModelAttribute("newComment") Comment comment, BindingResult results, 
-            Model model, HttpSession session, RedirectAttributes redirectAttributes) {
-
-        if(results.hasErrors()) {
-            model.addAttribute("newComment", comment);
-            return "viewShow.jsp";
-        }
-        
-        Long userId = (Long) session.getAttribute("userId");
-        if(userId == null) return "redirect:/";
-        
-        commentService.createComment(showId, userId, comment);
-        redirectAttributes.addFlashAttribute("message", "Your Comment Has Been Saved");
-
-        return "redirect:/dashboard";
-    }
-    
-    @GetMapping("/myComments")
-    public String myComments(HttpSession session, Model model) {
-        
-        Long userId = (Long) session.getAttribute("userId");
-        if(userService.getSessionUser(session) == null) return "redirect:/";
-
-        model.addAttribute("allShows", showService.getAllShows());
-        User user = userService.getUser(userId);
-        model.addAttribute("validUser", user);
-//        model.addAttribute("allUsers", userService.getAllUsers());
-
-        return "comments.jsp";
-    }
-    
-    @DeleteMapping("/deleteComment/{id}")
-    public String deleteComment(@PathVariable Long id, HttpSession session, RedirectAttributes redirectAttributes) {
-        
-        if(userService.getSessionUser(session) == null) return "redirect:/";
-        
-        commentService.deleteComment(id);
-
-        redirectAttributes.addFlashAttribute("message", "You Have Deleted A Comment");
-        return "redirect:/dashboard";
-    }
 
 }
