@@ -141,6 +141,15 @@ public class ShowController {
         return "comments.jsp";
     }
     
-    
-    
+    @DeleteMapping("/deleteComment/{id}")
+    public String deleteComment(@PathVariable Long id, HttpSession session, RedirectAttributes redirectAttributes) {
+        
+        if(userService.getSessionUser(session) == null) return "redirect:/";
+        
+        commentService.deleteComment(id);
+
+        redirectAttributes.addFlashAttribute("message", "You Have Deleted A Comment");
+        return "redirect:/dashboard";
+    }
+
 }

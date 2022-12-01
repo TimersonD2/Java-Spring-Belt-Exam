@@ -25,7 +25,9 @@
 				<div class="viewThoughts">
 					<h5 class="blueText">Comment on ${item.show.title}</h5>
 					<textarea class="thoughts" rows="6" cols="60">${item.comment}</textarea>
-					<button class="deleteBtn">Delete Comment</button>
+					<form:form action="/deleteComment/${comment.id}" method="delete">
+						<button class="deleteBtn">Delete Comment</button>
+					</form:form>
 				</div>
 			</c:forEach>
 		</div>
