@@ -183,6 +183,11 @@ input {
 	cursor: pointer;
 }
 
+.thumb {
+	height: 3rem;
+	width: 3rem;
+}
+
 .books {
 	width: 75%;
 }

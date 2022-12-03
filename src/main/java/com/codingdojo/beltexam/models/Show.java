@@ -49,6 +49,17 @@ public class Show {
     
     private String imgUrl;
     
+//  @NotNull(message="Age must be between 0 and 200")
+//  @Min(0)
+//  @Max(200)
+    private int likes;
+  
+    private int disLikes;
+
+    private boolean thumbsUp;
+  
+    private boolean thumbsDown;
+  
     @Column(updatable=false)
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date createdAt;
@@ -109,6 +120,40 @@ public class Show {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    
+    
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
+    }
+
+    public int getDisLikes() {
+        return disLikes;
+    }
+
+    public void setDisLikes(int disLikes) {
+        this.disLikes = disLikes;
+    }
+
+    public boolean isThumbsUp() {
+        return thumbsUp;
+    }
+
+    public void setThumbsUp(boolean thumbsUp) {
+        this.thumbsUp = thumbsUp;
+    }
+
+    public boolean isThumbsDown() {
+        return thumbsDown;
+    }
+
+    public void setThumbsDown(boolean thumbsDown) {
+        this.thumbsDown = thumbsDown;
     }
 
     public User getUser() {

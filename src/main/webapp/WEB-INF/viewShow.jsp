@@ -31,11 +31,15 @@
 			<h2 class="blueText">Posted by: ${show.user.userName} </h2>
 			<h3 class="blueText">Network: ${show.network} </h3>
 			<h5 class="blueText">Rating: ${show.rating} </h5>
+			<img alt="no image available" src="/images/thumbs-up.png" class="thumb">
+			<img alt="no image available" src="/images/thumbs-dn.png" class="thumb">
 			
 			<div class="viewThoughts">
 				<h5 class="blueText">Thoughts about the show:</h5>
 				<textarea class="thoughts" rows="6" cols="60">${show.description}</textarea>
 				<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
+				<p class="blueText">Likes: ${show.likes}</p>
+				<p class="blueText">Dislikes: ${show.disLikes}</p>
 	
 				<c:if test="${sessionScope.userId == show.user.id}">
 					<div class="botBtn">
