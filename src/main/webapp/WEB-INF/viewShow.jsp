@@ -27,63 +27,63 @@
 			<a class="links" href="/dashboard">Back to Dashboard</a>
 			</div>
 		</div>
-		<div class="viewMain">
-			<h2 class="blueText">Posted by: ${show.user.userName} </h2>
-			<h3 class="blueText">Network: ${show.network} </h3>
-			<h5 class="blueText">Rating: ${show.rating} </h5>
-			<img alt="no image available" src="/images/thumbs-up.png" class="thumb">
-			<img alt="no image available" src="/images/thumbs-dn.png" class="thumb">
-			
-			<div class="viewThoughts">
-				<h5 class="blueText">Thoughts about the show:</h5>
-				<textarea class="thoughts" rows="6" cols="60">${show.description}</textarea>
-				<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
-				<p class="blueText">Likes: ${show.likes}</p>
-				<p class="blueText">Dislikes: ${show.disLikes}</p>
-	
-				<c:if test="${sessionScope.userId == show.user.id}">
-					<div class="botBtn">
-						<form:form action="/editShow/${show.id}" method="get">
-							<button class="loginBtn">Edit Show</button>
-						</form:form>
-						<form:form action="/deleteShow/${show.id}" method="delete">
-							<button class="deleteBtn">Delete Show</button>
-						</form:form>
+		<div class="viewShow">
+			<div class="statsCol">
+				<h3 class="blueText">Posted by: ${show.user.userName} </h3>
+				<h4 class="blueText">Network: ${show.network} </h4>
+				<h5 class="blueText">Rating: ${show.rating} </h5>
+				<img alt="no image available" src="/images/thumbs-up.png" class="thumb">
+				<img alt="no image available" src="/images/thumbs-dn.png" class="thumb">
+				<div class="likes">
+					<p class="likesText">Likes: ${show.likes}</p>
+					<p class="likesText">Dislikes: ${show.disLikes}</p>
+				</div>
+				
+				<div class="viewThoughts">
+					<h6 class="blueText">Description of the show:</h6>
+					<textarea class="thoughts" rows="5" cols="60">${show.description}</textarea>
+					<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
+		
+					<c:if test="${sessionScope.userId == show.user.id}">
+						<div class="botBtn">
+							<form:form action="/editShow/${show.id}" method="get">
+								<button class="loginBtn">Edit Show</button>
+							</form:form>
+							<form:form action="/deleteShow/${show.id}" method="delete">
+								<button class="deleteBtn">Delete Show</button>
+							</form:form>
+						</div>
+					</c:if>
+				</div>
+			</div>
+			<div class="commentCol">
+				<h3 class="blueText">Comments For ${show.title}</h3>
+				<c:forEach items="${show.comments}" var="item">
+					<div class="viewThoughts">
+						<h6 class="blueText">${item.user.userName} thoughts...</h6>
+						<textarea class="thoughts" rows="4" cols="35">${item.comment}</textarea>
 					</div>
-				</c:if>
+				</c:forEach>
 			</div>
 		</div>
 		
 		<div class="viewMain">
 			<form:form action="/saveComment/${show.id}" method="post" modelAttribute="newComment">
-		    	<p>
 		    	<form:hidden path="user"/>
-		    	</p>
-		    	<p>
 		    	<form:hidden path="show"/>
-		    	</p>
 		    	
 				<p>
 					<form:label class="blueLabel" path="comment">Comment about the show:</form:label>
-					<form:textarea class="thoughts" rows="6" cols="60" path="comment" />
+					<form:textarea class="thoughts" rows="5" cols="60" path="comment" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="comment" />
 				</p>
 
 		    	<div class="botBtn">
-			        <button class="loginBtn">Add Comment</button>
+			        <button class="loginBtn">Save</button>
 		    	</div>
 			</form:form>
-		</div>
-		
-		<div class="viewMain">
-			<c:forEach items="${show.comments}" var="item">
-				<div class="viewThoughts">
-					<h5 class="blueText">${item.user.userName} thoughts...</h5>
-					<textarea class="thoughts" rows="6" cols="60">${item.comment}</textarea>
-				</div>
-			</c:forEach>
 		</div>
 		
 		

@@ -44,7 +44,7 @@ table {
 }
 
 .wrapper {
-    width: 900px;
+    width: 1000px;
     margin: 0 auto;
     margin-top: 30px;
 }
@@ -103,6 +103,29 @@ table {
     text-align: center;
 }
 
+.viewShow {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.statsCol {
+	border: 5px solid aqua;
+	border-radius: 10px;
+	padding: 2rem;
+    width: 575px;
+    text-align: center;
+}
+
+.commentCol {
+	border: 5px solid aqua;
+	border-radius: 10px;
+	padding: 2rem;
+    width: 385px;
+    text-align: center;
+}
+
 .welcome {
 	margin-bottom: 50px;
 }
@@ -114,7 +137,7 @@ table {
 }
 
 .viewThoughts {
-    margin-top: 3rem;
+    margin-top: 0rem;
 }
 
 input {
@@ -186,6 +209,13 @@ input {
 .thumb {
 	height: 3rem;
 	width: 3rem;
+	margin: 1rem;
+}
+
+.likes {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .books {
@@ -230,6 +260,12 @@ input {
 .blueText {
 	color: aqua;
 	font-family: cursive;
+}
+
+.likesText {
+	color: aqua;
+	font-family: cursive;
+	padding: 0.5rem;
 }
 
 .blueLabel {
