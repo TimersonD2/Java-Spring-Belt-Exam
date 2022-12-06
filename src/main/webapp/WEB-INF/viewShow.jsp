@@ -38,14 +38,23 @@
 						<h4 class="blueText">Network: ${show.network} </h4>
 						<h5 class="blueText">Rating: ${show.rating} </h5>
 					</div>
-					<div class="showBox">
-					<img alt="no image available" src="/images/thumbs-up.png" class="thumb" onclick=incLikes(${show.likes})>
-					</div>
-					<img alt="no image available" src="/images/thumbs-up.png" class="thumb">
-					<img alt="no image available" src="/images/thumbs-dn.png" class="thumb">
 					<div class="likes">
-						<p class="likesText">Likes: ${show.likes}</p>
-						<p class="likesText">Dislikes: ${show.disLikes}</p>
+						<div class="thumbCol">
+							<div class="thumbBox">
+								<form:form action="/updateLikes/${show.id}" method="put" modelAttribute="show">
+									<button class="likeBtn"></button>
+								</form:form>
+							</div>
+							<p class="likesText">Likes: ${show.likes}</p>
+						</div>
+						<div class="thumbCol">
+							<div class="thumbBox">
+								<form:form action="/updateDisLikes/${show.id}" method="put" modelAttribute="show">
+									<button class="dislikeBtn"></button>
+								</form:form>
+							</div>
+							<p class="likesText">Dislikes: ${show.disLikes}</p>
+						</div>
 					</div>
 				</div>
 				<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
@@ -96,8 +105,6 @@
 		    	</div>
 			</form:form>
 		</div>
-		
-		
 	</div>
 </body>
 </html>

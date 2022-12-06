@@ -34,7 +34,7 @@ public class ShowController {
 	private ShowService showService;
 	
     @GetMapping("/addShow")
-    public String createBook(@ModelAttribute("newShow") Show show, HttpSession session) {
+    public String createShow(@ModelAttribute("newShow") Show show, HttpSession session) {
     	
     	if(userService.getSessionUser(session) == null) return "redirect:/";
     	
@@ -80,7 +80,7 @@ public class ShowController {
     }
 
     @PutMapping("/updateShow/{id}")
-    public String updateBook(@PathVariable Long id, 
+    public String updateShow(@PathVariable Long id, 
     		@Valid @ModelAttribute("show") Show show, BindingResult results, 
     		Model model, HttpSession session, RedirectAttributes redirectAttributes) {
     	
@@ -106,9 +106,37 @@ public class ShowController {
     	return "redirect:/dashboard";
     }
     
-    public void incrementLikes(int likes) {
-        likes++;
+    @PutMapping("/updateLikes/{id}")
+    public String updateLikes(@PathVariable Long id,  @ModelAttribute("newComment") Comment comment, 
+            HttpSession session, RedirectAttributes redirectAttributes) {
+        
+        if(userService.getSessionUser(session) == null) return "redirect:/";
+        
+        Show show = showService.getShow(id);
+        
+        int likes = show.getLikes();
+        likes = likes + 1;
+        show.setLikes(likes);
+
+        showService.updateShow(show);
+        redirectAttributes.addFlashAttribute("message", "Your Show Has Been Liked");
+        return "redirect:/viewShow/{id}";
     }
 
+    @PutMapping("/updateDisLikes/{id}")
+    public String updateDisLikes(@PathVariable Long id,  @ModelAttribute("newComment") Comment comment, 
+            HttpSession session, RedirectAttributes redirectAttributes) {
+        
+        if(userService.getSessionUser(session) == null) return "redirect:/";
+        
+        Show show = showService.getShow(id);
+        
+        int dislikes = show.getDisLikes();
+        dislikes = dislikes + 1;
+        show.setDisLikes(dislikes);
 
+        showService.updateShow(show);
+        redirectAttributes.addFlashAttribute("message", "Your Show Is Not Liked");
+        return "redirect:/viewShow/{id}";
+    }
 }
