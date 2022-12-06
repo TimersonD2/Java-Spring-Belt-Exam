@@ -17,6 +17,8 @@
 <script src="/webjars/jquery/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 
+<script type="text/javascript" src="/js/script.js"></script>
+
 <title>Show Details</title>
 </head>
 <body class="darkMode">
@@ -29,20 +31,29 @@
 		</div>
 		<div class="viewShow">
 			<div class="statsCol">
-				<h3 class="blueText">Posted by: ${show.user.userName} </h3>
-				<h4 class="blueText">Network: ${show.network} </h4>
-				<h5 class="blueText">Rating: ${show.rating} </h5>
-				<img alt="no image available" src="/images/thumbs-up.png" class="thumb">
-				<img alt="no image available" src="/images/thumbs-dn.png" class="thumb">
-				<div class="likes">
-					<p class="likesText">Likes: ${show.likes}</p>
-					<p class="likesText">Dislikes: ${show.disLikes}</p>
+				<h3 class="blueText">Posted by: ${show.user.userName}</h3>
+				<div class="showMain">
+				<div>
+					<div class="network">
+						<h4 class="blueText">Network: ${show.network} </h4>
+						<h5 class="blueText">Rating: ${show.rating} </h5>
+					</div>
+					<div class="showBox">
+					<img alt="no image available" src="/images/thumbs-up.png" class="thumb" onclick=incLikes(${show.likes})>
+					</div>
+					<img alt="no image available" src="/images/thumbs-up.png" class="thumb">
+					<img alt="no image available" src="/images/thumbs-dn.png" class="thumb">
+					<div class="likes">
+						<p class="likesText">Likes: ${show.likes}</p>
+						<p class="likesText">Dislikes: ${show.disLikes}</p>
+					</div>
 				</div>
-				
+				<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
+				</div>
+								
 				<div class="viewThoughts">
 					<h6 class="blueText">Description of the show:</h6>
 					<textarea class="thoughts" rows="5" cols="60">${show.description}</textarea>
-					<img class="viewImg" alt="No Image Available" src="${show.imgUrl}">
 		
 					<c:if test="${sessionScope.userId == show.user.id}">
 						<div class="botBtn">
@@ -88,6 +99,5 @@
 		
 		
 	</div>
-
 </body>
 </html>

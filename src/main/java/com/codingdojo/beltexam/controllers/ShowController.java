@@ -105,6 +105,10 @@ public class ShowController {
         redirectAttributes.addFlashAttribute("message", "You Have Deleted A Show");
     	return "redirect:/dashboard";
     }
+    
+    public void incrementLikes(int likes) {
+        likes++;
+    }
 
 
 }
