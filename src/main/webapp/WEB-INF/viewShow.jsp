@@ -61,8 +61,10 @@
 				</div>
 								
 				<div class="viewThoughts">
-					<h6 class="blueText">Description of the show:</h6>
-					<textarea class="thoughts" rows="5" cols="60">${show.description}</textarea>
+					<div class="viewDesc">
+						<h6 class="blueText">Description of the show:</h6>
+						<textarea class="thoughts" rows="5" cols="60">${show.description}</textarea>
+					</div>
 		
 					<c:if test="${sessionScope.userId == show.user.id}">
 						<div class="botBtn">
@@ -80,21 +82,21 @@
 				<h3 class="blueText">Comments For ${show.title}</h3>
 				<c:forEach items="${show.comments}" var="item">
 					<div class="viewThoughts">
-						<h6 class="blueText">${item.user.userName} thoughts...</h6>
+						<h6 class="blueText">${item.user.userName}'s thoughts...</h6>
 						<textarea class="thoughts" rows="4" cols="35">${item.comment}</textarea>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 		
-		<div class="viewMain">
+		<div class="commentForm">
 			<form:form action="/saveComment/${show.id}" method="post" modelAttribute="newComment">
 		    	<form:hidden path="user"/>
 		    	<form:hidden path="show"/>
 		    	
 				<p>
 					<form:label class="blueLabel" path="comment">Comment about the show:</form:label>
-					<form:textarea class="thoughts" rows="5" cols="60" path="comment" />
+					<form:textarea class="thoughts" rows="4" cols="60" path="comment" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="comment" />
