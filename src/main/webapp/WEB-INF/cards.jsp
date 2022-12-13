@@ -20,7 +20,18 @@
 <title>Cards View</title>
 </head>
 <body class="dark-mode">
-			<a class="links" href="/dashboard">Back to Dashboard</a>
-
+	<div class="dash-main">
+		<a class="links" href="/dashboard">Back to Dashboard</a>
+		<div class="cards-main">
+			<c:forEach items="${allShows}" var="show">
+				<div class="show-card">
+					<a class="links" href="/viewShow/${show.id}">${show.title}</a>
+					<p class="blue-text">Network: ${show.network}</p>
+					<p class="blue-text">Rating: ${show.rating}</p>
+					<img class="show-img" alt="No Immage Available" src="${show.imgUrl}">
+				</div>
+			</c:forEach>
+		</div>
+	</div>
 </body>
 </html>

@@ -58,19 +58,7 @@
 				</tbody>
 			</table>
 			<div class="bottom-button">
-				<form:form action="/addShow" method="get">
-					<button class="login-btn">Add a Show</button>
-				</form:form>
-			</div>
-			<div class="cards-main">
-				<c:forEach items="${allShows}" var="show">
-					<div class="show-card">
-						<a class="links" href="/viewShow/${show.id}">${show.title}</a>
-						<p class="blue-text">Network: ${show.network}</p>
-						<p class="blue-text">Rating: ${show.rating}</p>
-						<img class="show-img" alt="No Immage Available" src="${show.imgUrl}">
-					</div>
-				</c:forEach>
+				<a class="add-link" href="/addShow">Add Show</a>
 			</div>
 		</div>
 	</div>

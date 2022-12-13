@@ -14,6 +14,12 @@
 	color: aqua;
 }
 
+.add-link {
+	margin-left: 2.6rem;
+	margin-top: .5rem;
+	color: aqua;
+}
+
 .header {
 	text-align: center;
 }
@@ -217,6 +223,7 @@ input {
 
 .delete-btn {
 	margin-left: 40px;
+	width: 9rem;
 	background-color: #ec391a;
 	padding: 10px;
 	color: black;
@@ -229,6 +236,7 @@ input {
 
 .form-btn {
 	margin-left: 40px;
+	width: 9rem;
 	background-color: #00ffff;
 	padding: 10px;
 	color: black;
@@ -251,18 +259,6 @@ input {
 	display: flex;
 	justify-content: space-between;
 	border-bottom: 3px solid black;
-}
-
-.editBtn {
-	margin-top: 30px;
-	background-color: #81c7f5;
-	color: white;
-	padding: 10px 20px;
-	text-align: center;
-	font-size: 16px;
-	border: 2px solid black;
-	box-shadow: 3px 3px black;
-	cursor: pointer;
 }
 
 .bottom-button {
