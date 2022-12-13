@@ -18,75 +18,75 @@
 <title>Show Manager</title>
 </head>
 
-<body class="darkMode">
+<body class="dark-mode">
 	<div class="wrapper">
 		<div class="header">
-			<h1 class="blueText">TV Shows Application</h1>
+			<h1 class="blue-text">TV Shows Application</h1>
 		</div>
 		<div class="main">
 			<div class="login">
-				<h1 class="loginHdr">Register</h1>
+				<h1 class="login-hdr">Register</h1>
 				<form:form action="/register" method="post" modelAttribute="newUser">
-					<p class="loginRow">
-						<form:label class="blueLabel" path="userName">User Name:</form:label>
-						<form:input class="inputBgrnd" path="userName" />
+					<p class="login-row">
+						<form:label class="blue-label" path="userName">User Name:</form:label>
+						<form:input class="input-bgrnd" path="userName" />
 					</p>
 					<p>
 						<form:errors class="text-danger" path="userName" />
 					</p>
 
-					<p class="loginRow">
-						<form:label class="blueLabel" path="email">Email:</form:label>
-						<form:input class="inputBgrnd" path="email" />
+					<p class="login-row">
+						<form:label class="blue-label" path="email">Email:</form:label>
+						<form:input class="input-bgrnd" path="email" />
 					</p>
 					<p>
 						<form:errors class="text-danger" path="email" />
 					</p>
 
-					<p class="loginRow">
-						<form:label class="blueLabel" path="password">Password:</form:label>
-						<form:password class="inputBgrnd" path="password" />
+					<p class="login-row">
+						<form:label class="blue-label" path="password">Password:</form:label>
+						<form:password class="input-bgrnd" path="password" />
 					</p>
 					<p>
 						<form:errors class="text-danger" path="password" />
 					</p>
 
-					<p class="loginRow">
-						<form:label class="blueLabel" path="confirm">Confirm PW:</form:label>
-						<form:password class="inputBgrnd" path="confirm" />
+					<p class="login-row">
+						<form:label class="blue-label" path="confirm">Confirm PW:</form:label>
+						<form:password class="input-bgrnd" path="confirm" />
 					</p>
 					<p>
 						<form:errors class="text-danger" path="confirm" />
 					</p>
-					<p class="botBtn">
-						<button class="loginBtn">Register</button>
+					<p class="bot-btn">
+						<button class="login-btn">Register</button>
 					</p>
 				</form:form>
 			</div>
 
 			<div class="login">
-				<h1 class="loginHdr">Log In</h1>
+				<h1 class="login-hdr">Log In</h1>
 				<p><c:out value="${message}">${message}</c:out></p>
 				<form:form action="/login" method="post" modelAttribute="newLogin">
 
-					<p class="loginRow">
-						<form:label class="blueLabel" path="email">Email:</form:label>
-						<form:input class="inputBgrnd" path="email" />
+					<p class="login-row">
+						<form:label class="blue-label" path="email">Email:</form:label>
+						<form:input class="input-bgrnd" path="email" />
 					</p>
 					<p>
 						<form:errors class="text-danger" path="email" />
 					</p>
 
-					<p class="loginRow">
-						<form:label class="blueLabel" path="password">Password:</form:label>
-						<form:password class="inputBgrnd" path="password" />
+					<p class="login-row">
+						<form:label class="blue-label" path="password">Password:</form:label>
+						<form:password class="input-bgrnd" path="password" />
 					</p>
 					<p>
 						<form:errors class="text-danger" path="password" />
 					</p>
 
-					<p class="botBtn">
-						<button class="loginBtn">Log In</button>
+					<p class="bot-btn">
+						<button class="login-btn">Log In</button>
 					</p>
 				</form:form>
 			</div>

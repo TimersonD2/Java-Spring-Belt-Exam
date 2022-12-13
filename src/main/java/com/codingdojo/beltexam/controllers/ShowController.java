@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.codingdojo.beltexam.models.Comment;
 import com.codingdojo.beltexam.models.Show;
+import com.codingdojo.beltexam.models.User;
 //import com.codingdojo.beltexam.models.User;
 //import com.codingdojo.beltexam.services.CommentService;
 import com.codingdojo.beltexam.services.ShowService;
@@ -32,6 +33,20 @@ public class ShowController {
 	
 	@Autowired
 	private ShowService showService;
+	
+	@GetMapping("/cardView")
+	public String cardView(Model model, HttpSession session) {
+        
+        if(userService.getSessionUser(session) == null) return "redirect:/";
+        Long userId = (Long) session.getAttribute("userId");
+        User user = userService.getUser(userId);
+
+        model.addAttribute("allShows", showService.getAllShows());
+        model.addAttribute("validUser", user);
+        model.addAttribute("allUsers", userService.getAllUsers());
+
+	    return "cards.jsp";
+	}
 	
     @GetMapping("/addShow")
     public String createShow(@ModelAttribute("newShow") Show show, HttpSession session) {

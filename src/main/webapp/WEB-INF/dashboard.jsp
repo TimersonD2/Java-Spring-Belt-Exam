@@ -19,67 +19,60 @@
 
 <title>Show Dashboard</title>
 </head>
-<body class=darkMode>
+<body class="dark-mode">
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
-				<h1 class="blueText">
+				<h1 class="blue-text">
 					Welcome,
 					<c:out value="${validUser.userName}"></c:out>
 				</h1>
 				<a class="links" href="/myComments">My Comments</a>
+				<a class="links" href="/cardView">Card View</a>
+				
 				<a class="links" href="/logout">Logout</a>
 			</div>
-			<h4 class="welcomeBack">${message}</h4>
+			<h4 class="welcome-back">${message}</h4>
 		</div>
 
-		<div class="dashMain">
-			<h3 class="blueText">TV Shows</h3>
+		<div class="dash-main">
+			<h3 class="blue-text">TV Shows</h3>
 			<table>
 				<thead>
-					<tr class="tblRow">
-						<th class="tblHdr">Show</th>
-						<th class="tblHdr">Network</th>
-						<th class="tblHdr">Rating</th>
-						<th class="tblHdr">Posted By</th>
+					<tr class="tbl-row">
+						<th class="tbl-hdr">Show</th>
+						<th class="tbl-hdr">Network</th>
+						<th class="tbl-hdr">Rating</th>
+						<th class="tbl-hdr">Posted By</th>
 					</tr>
 				</thead>
 				<tbody>
 					<c:forEach items="${allShows}" var="show">
-						<tr class="tblRow">
-							<td class="tblData"><a class="links" href="/viewShow/${show.id}">${show.title}</a></td>
-							<td class="tblData"><c:out value="${show.network}"></c:out></td>
-							<td class="tblData"><c:out value="${show.rating}"></c:out></td>
-							<td class="tblData"><c:out value="${show.user.userName}"></c:out></td>
+						<tr class="tbl-row">
+							<td class="tbl-data"><a class="links" href="/viewShow/${show.id}">${show.title}</a></td>
+							<td class="tbl-data"><c:out value="${show.network}"></c:out></td>
+							<td class="tbl-data"><c:out value="${show.rating}"></c:out></td>
+							<td class="tbl-data"><c:out value="${show.user.userName}"></c:out></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
-			<div class="bottomButton">
+			<div class="bottom-button">
 				<form:form action="/addShow" method="get">
-					<button class="loginBtn">Add a Show</button>
+					<button class="login-btn">Add a Show</button>
 				</form:form>
 			</div>
-			<div class="cardsMain">
+			<div class="cards-main">
 				<c:forEach items="${allShows}" var="show">
-					<div class="showCard">
+					<div class="show-card">
 						<a class="links" href="/viewShow/${show.id}">${show.title}</a>
-						<p class="blueText">Network: ${show.network}</p>
-						<p class="blueText">Rating: ${show.rating}</p>
-						<img class="showImg" alt="No Immage Available" src="${show.imgUrl}">
+						<p class="blue-text">Network: ${show.network}</p>
+						<p class="blue-text">Rating: ${show.rating}</p>
+						<img class="show-img" alt="No Immage Available" src="${show.imgUrl}">
 					</div>
 				</c:forEach>
 			</div>
 		</div>
-		<div class="viewMain">
-			<c:forEach items="${validUser.comments}" var="item">
-				<div class="viewThoughts">
-					<h5 class="blueText">Comment on ${item.show.title}</h5>
-					<textarea class="thoughts" rows="6" cols="60">${item.comment}</textarea>
-				</div>
-			</c:forEach>
-		</div>
 	</div>
-
 </body>
 </html>

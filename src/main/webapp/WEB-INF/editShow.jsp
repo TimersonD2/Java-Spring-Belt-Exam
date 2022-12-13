@@ -19,47 +19,47 @@
 
 <title>Edit TV Show</title>
 </head>
-<body class="darkMode">
+<body class="dark-mode">
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
-				<h1 class="blueText">Edit TV Show</h1>
+				<h1 class="blue-text">Edit TV Show</h1>
 				<h6>
 					<a class="links" href="/dashboard">Back to DashBoard</a>
 				</h6>
 			</div>
 		</div>
-		<div class="viewMain">
+		<div class="view-main">
 		    <form:form action="/updateShow/${show.id}" method="put" modelAttribute="show">
 		    	<p>
 		   		 	<form:hidden path="user"/>
 		    	</p>
-				<p class="editRow">
-					<form:label class="blueLabel" path="title">Title:</form:label>
-					<form:input class="inputBgrnd" path="title" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="title">Title:</form:label>
+					<form:input class="input-bgrnd" path="title" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="title" />
 				</p>
 
-				<p class="editRow">
-					<form:label class="blueLabel" path="network">Network:</form:label>
-					<form:input class="inputBgrnd" path="network" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="network">Network:</form:label>
+					<form:input class="input-bgrnd" path="network" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="network" />
 				</p>
 
-				<p class="editRow">
-					<form:label class="blueLabel" path="rating">Rating:</form:label>
-					<form:input class="inputBgrnd" type="number" path="rating" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="rating">Rating:</form:label>
+					<form:input class="input-bgrnd" type="number" path="rating" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="rating" />
 				</p>
 
 				<p>
-					<form:label class="blueLabel" path="description">Thoughts about the show:</form:label>
+					<form:label class="blue-label" path="description">Thoughts about the show:</form:label>
 					<form:textarea class="thoughts" rows="6" cols="60" path="description" />
 				</p>
 				<p>
@@ -68,8 +68,8 @@
 
 				<form:hidden path="rating" value="5"/>
 		    	
-		    	<div class="botBtn">
-			        <button class="loginBtn">Update</button>
+		    	<div class="bot-btn">
+			        <button class="login-btn">Update</button>
 		    	</div>
 		    </form:form>
 		</div>

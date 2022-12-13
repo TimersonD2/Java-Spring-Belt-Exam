@@ -19,55 +19,55 @@
 
 <title>Add A Show</title>
 </head>
-<body class="darkMode">
+<body class="dark-mode">
 	<div class="wrapper">
 		<div class="welcome">
 			<div class="message">
-				<h1 class="blueText">Add TV Show</h1>
+				<h1 class="blue-text">Add TV Show</h1>
 				<h6>
 					<a class="links" href="/dashboard">Back to DashBoard</a>
 				</h6>
 			</div>
 		</div>
-		<div class="viewMain">
+		<div class="view-main">
 			<form:form action="/saveShow" method="post" modelAttribute="newShow">
 		    	<p>
 		    	<form:hidden path="user"/>
 		    	</p>
-				<p class="editRow">
-					<form:label class="blueLabel" path="title">Title:</form:label>
-					<form:input class="inputBgrnd" path="title" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="title">Title:</form:label>
+					<form:input class="input-bgrnd" path="title" />
 				</p>
-					<form:errors class="errorText" path="title" />
+					<form:errors class="error-text" path="title" />
 				<p>
 				</p>
 
-				<p class="editRow">
-					<form:label class="blueLabel" path="network">Network:</form:label>
-					<form:input class="inputBgrnd" path="network" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="network">Network:</form:label>
+					<form:input class="input-bgrnd" path="network" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="network" />
 				</p>
 
-				<p class="editRow">
-					<form:label class="blueLabel" path="rating">Rating:</form:label>
-					<form:input class="inputBgrnd" type="number" path="rating" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="rating">Rating:</form:label>
+					<form:input class="input-bgrnd" type="number" path="rating" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="rating" />
 				</p>
 
-				<p class="editRow">
-					<form:label class="blueLabel" path="imgUrl">Image URL:</form:label>
-					<form:input class="inputBgrnd" path="imgUrl" />
+				<p class="edit-row">
+					<form:label class="blue-label" path="imgUrl">Image URL:</form:label>
+					<form:input class="input-bgrnd" path="imgUrl" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="imgUrl" />
 				</p>
 
 				<p>
-					<form:label class="blueLabel" path="description">Thoughts about the show:</form:label>
+					<form:label class="blue-label" path="description">Thoughts about the show:</form:label>
 					<form:textarea class="thoughts" rows="6" cols="60" path="description" />
 				</p>
 				<p>
@@ -76,8 +76,8 @@
 
 				<form:hidden path="rating" value="5"/>
 		    	
-		    	<div class="botBtn">
-			        <button class="loginBtn">Add Show</button>
+		    	<div class="bot-btn">
+			        <button class="login-btn">Add Show</button>
 		    	</div>
 			</form:form>
 		</div>
