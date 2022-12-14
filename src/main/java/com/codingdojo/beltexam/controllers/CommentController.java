@@ -69,6 +69,7 @@ public class CommentController {
         
         if(userService.getSessionUser(session) == null) return "redirect:/";
         
+        System.out.print("deleting comment");
         commentService.deleteComment(id);
 
         redirectAttributes.addFlashAttribute("message", "You Have Deleted A Comment");

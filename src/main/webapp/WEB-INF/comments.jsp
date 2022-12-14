@@ -26,7 +26,8 @@
 				<div class="view-thoughts">
 					<h5 class="blue-text">Comment on ${item.show.title}</h5>
 					<textarea class="thoughts" rows="6" cols="60">${item.comment}</textarea>
-					<form:form action="/deleteComment/${comment.id}" method="delete">
+					<p>Comment Id: ${item.id}</p>
+					<form:form action="/deleteComment/${item.id}" method="delete">
 						<button class="delete-btn">Delete Comment</button>
 					</form:form>
 				</div>
