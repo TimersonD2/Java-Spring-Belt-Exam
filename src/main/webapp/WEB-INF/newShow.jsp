@@ -72,8 +72,6 @@
 					<form:errors class="text-danger" path="description" />
 				</p>
 
-				<form:hidden path="rating" value="5"/>
-		    	
 		    	<div class="bot-btn">
 			        <button class="login-btn">Add Show</button>
 		    	</div>

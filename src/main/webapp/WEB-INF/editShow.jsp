@@ -21,13 +21,11 @@
 </head>
 <body class="dark-mode">
 	<div class="wrapper">
-		<div class="welcome">
-			<div class="message">
-				<h1 class="blue-text">Edit TV Show</h1>
-				<h6>
-					<a class="links" href="/dashboard">Back to DashBoard</a>
-				</h6>
-			</div>
+		<div class="message">
+			<h1 class="blue-text">Edit TV Show</h1>
+			<h6>
+				<a class="links" href="/dashboard">Back to DashBoard</a>
+			</h6>
 		</div>
 		<div class="view-main">
 		    <form:form action="/updateShow/${show.id}" method="put" modelAttribute="show">
@@ -65,6 +63,8 @@
 				<p>
 					<form:errors class="text-danger" path="imgUrl" />
 				</p>
+				
+				<img class="view-img" alt="No Image Available" src="${show.imgUrl}">
 
 				<p>
 					<form:label class="blue-label" path="description">Thoughts about the show:</form:label>
@@ -73,9 +73,13 @@
 				<p>
 					<form:errors class="text-danger" path="description" />
 				</p>
+		    	<p>
+		   		 	<form:hidden path="likes"/>
+		    	</p>
+		    	<p>
+		   		 	<form:hidden path="disLikes"/>
+		    	</p>
 
-				<form:hidden path="rating" value="5"/>
-		    	
 		    	<div class="bot-btn">
 			        <button class="login-btn">Update</button>
 		    	</div>
