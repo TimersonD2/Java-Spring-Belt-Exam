@@ -21,13 +21,11 @@
 </head>
 <body class="dark-mode">
 	<div class="wrapper">
-		<div class="welcome">
-			<div class="message">
-				<h1 class="blue-text">Add TV Show</h1>
-				<h6>
-					<a class="links" href="/dashboard">Back to DashBoard</a>
-				</h6>
-			</div>
+		<div class="message">
+			<h1 class="blue-text">Add TV Show</h1>
+			<h6>
+				<a class="links" href="/dashboard">Back to DashBoard</a>
+			</h6>
 		</div>
 		<div class="view-main">
 			<form:form action="/saveShow" method="post" modelAttribute="newShow">
@@ -38,7 +36,7 @@
 					<form:label class="blue-label" path="title">Title:</form:label>
 					<form:input class="input-bgrnd" path="title" />
 				</p>
-					<form:errors class="error-text" path="title" />
+					<form:errors class="text-danger" path="title" />
 				<p>
 				</p>
 

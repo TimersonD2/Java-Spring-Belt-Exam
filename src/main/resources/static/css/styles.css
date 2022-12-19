@@ -10,6 +10,38 @@
 	background-color: black;
 }
 
+.wrapper {
+    width: 1000px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.header {
+	text-align: center;
+}
+
+.title {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 3px solid black;
+}
+
+.welcome {
+	margin-bottom: 1rem;
+}
+
+.welcome-back {
+	color: aqua;
+	font-family: cursive;
+	text-align: center;
+}
+
+.message {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
 .links {
 	color: aqua;
 }
@@ -20,8 +52,29 @@
 	color: aqua;
 }
 
-.header {
-	text-align: center;
+.blue-text {
+	color: aqua;
+	font-family: cursive;
+}
+
+.blue-label {
+	color: aqua;
+	font-family: cursive;
+	font-weight: bolder;
+}
+
+input {
+	width: 250px;
+}
+
+.input-bgrnd {
+	background-color: #ececec;
+	border: solid 3px white;
+}
+
+table {
+	width:85%;
+	border: 6px solid white;
 }
 
 .tbl-hdr {
@@ -39,20 +92,9 @@
 	height: 3rem;
 }
 
-table {
-	width:85%;
-	border: 6px solid white;
-}
-
 .tbl-data {
 	border: 5px double white;
 	text-align: center;
-}
-
-.wrapper {
-    width: 1000px;
-    margin: 0 auto;
-    margin-top: 30px;
 }
 
 .main {
@@ -60,6 +102,59 @@ table {
     margin-top: 30px;
     display: flex;
     justify-content: space-around;
+}
+
+.login-hdr {
+	margin-bottom: 30px;
+	color: aqua;
+	text-align: center;
+	font-family: cursive;
+}
+
+.login {
+	padding:10px;
+	width: 400px;
+	border: solid 4px;
+	border-color: white;
+}
+
+.login-row {
+	padding: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.dash-main {
+	margin-left: 8rem;
+    width: 800px;
+    margin-top: 30px;
+}
+
+.show-main {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.stats-col {
+	border: 5px solid aqua;
+	border-radius: 10px;
+	padding: 2rem;
+    width: 575px;
+    height: 800px;
+}
+
+.comment-col {
+	border: 5px solid aqua;
+	border-radius: 10px;
+	padding: 2rem;
+    width: 385px;
+    text-align: center;
+}
+
+.show-img {
+	height: 5rem;
+	width: 8rem;
 }
 
 .cards-main {
@@ -83,30 +178,6 @@ table {
 	align-items: center;
 }
 
-.show-img {
-	height: 5rem;
-	width: 8rem;
-}
-
-.view-img {
-	height: 10rem;
-	width: 16rem;
-	border: 2px solid white;
-	margin-top: 1rem;
-}
-
-.dash-main {
-	margin-left: 8rem;
-    width: 800px;
-    margin-top: 30px;
-}
-
-.show-main {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
 .view-main {
 	border: 5px solid aqua;
 	border-radius: 10px;
@@ -117,14 +188,11 @@ table {
     text-align: center;
 }
 
-.comment-form {
-	border: 5px solid aqua;
-	border-radius: 10px;
-	padding: 1rem;
-	margin-left: 0rem;
-    width: 500px;
-    margin-top: 1rem;
-    text-align: center;
+.view-img {
+	height: 10rem;
+	width: 16rem;
+	border: 2px solid white;
+	margin-top: 1rem;
 }
 
 .view-desc {
@@ -139,44 +207,77 @@ table {
     justify-content: space-between;
 }
 
-.stats-col {
-	border: 5px solid aqua;
-	border-radius: 10px;
-	padding: 2rem;
-    width: 575px;
-    height: 800px;
-}
-
-.comment-col {
-	border: 5px solid aqua;
-	border-radius: 10px;
-	padding: 2rem;
-    width: 385px;
-    text-align: center;
-}
-
-.welcome {
-	margin-bottom: 1rem;
-}
-
-.message {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-
 .view-thoughts {
     margin-top: 0rem;
 }
 
-input {
-	width: 250px;
+.thoughts {
+	border: 4px solid #c0c0c0;
+	border-style: double;
 }
 
-.login-row {
-	padding: 10px;
+.likes {
+	width: 13.5rem;
+	margin-top: 1.5rem;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.likes-text {
+	margin: 0px;
+	padding: 0px;
+	color: aqua;
+	font-family: cursive;
+	font-size: medium;
+}
+
+.thumb-box {
+	height: 3rem;
+	width: 3rem;
+	border: 3px solid #c0c0c0;
+	border-style: outset;
+	background-color: white;
+}
+
+.thumb-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.like-btn {
+	height: 2.5rem;
+	width: 2.5rem;
+	background-image: url("/images/thumbs-up.png");
+	background-repeat: no-repeat;
+	background-size: 2.5rem 2.5rem;
+	background-position: center;
+	background-color: white;
+	margin: 0px;
+	border: 0px;
+}
+
+.dislike-btn {
+	height: 2.5rem;
+	width: 2.5rem;
+	background-image: url("/images/thumbs-dn.png");
+	background-repeat: no-repeat;
+	background-size: 2.5rem 2.5rem;
+	background-position: center;
+	background-color: white;
+	margin: 0px;
+	border: 0px;
+}
+
+.comment-form {
+	border: 5px solid aqua;
+	border-radius: 10px;
+	padding: 1rem;
+	margin-left: 0rem;
+    width: 500px;
+    margin-top: 1rem;
+    text-align: center;
 }
 
 .edit-row {
@@ -187,24 +288,10 @@ input {
 	justify-content: space-between;
 }
 
-.login {
-	padding:10px;
-	width: 400px;
-	border: solid 4px;
-	border-color: white;
-}
-
 .bot-btn {
 	margin-top: 10px;
 	display: flex;
 	justify-content: center;
-}
-
-.login-hdr {
-	margin-bottom: 30px;
-	color: aqua;
-	text-align: center;
-	font-family: cursive;
 }
 
 .login-btn {
@@ -247,103 +334,10 @@ input {
 	cursor: pointer;
 }
 
-.likes {
-	width: 13.5rem;
-	margin-top: 1.5rem;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-}
-
-.title {
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 3px solid black;
-}
-
 .bottom-button {
 	display: flex;
 	justify-content: flex-start;
 	padding-right: 100px;
-}
-
-.thoughts {
-	border: 4px solid #c0c0c0;
-	border-style: double;
-}
-
-.welcome-back {
-	color: aqua;
-	font-family: cursive;
-	text-align: center;
-}
-
-.blue-text {
-	color: aqua;
-	font-family: cursive;
-}
-
-.likes-text {
-	margin: 0px;
-	padding: 0px;
-	color: aqua;
-	font-family: cursive;
-	font-size: medium;
-}
-
-.blue-label {
-	color: aqua;
-	font-family: cursive;
-	font-weight: bolder;
-}
-
-.input-bgrnd {
-	background-color: #ececec;
-	border: solid 3px white;
-}
-
-.error-text {
-	color: red;
-	margin: 0px;
-	padding: 0px;
-}
-
-.thumb-box {
-	height: 3rem;
-	width: 3rem;
-	border: 3px solid #c0c0c0;
-	border-style: outset;
-	background-color: white;
-}
-
-.thumb-col {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.like-btn {
-	height: 2.5rem;
-	width: 2.5rem;
-	background-image: url("/images/thumbs-up.png");
-	background-repeat: no-repeat;
-	background-size: 2.5rem 2.5rem;
-	background-position: center;
-	background-color: white;
-	margin: 0px;
-	border: 0px;
-}
-
-.dislike-btn {
-	height: 2.5rem;
-	width: 2.5rem;
-	background-image: url("/images/thumbs-dn.png");
-	background-repeat: no-repeat;
-	background-size: 2.5rem 2.5rem;
-	background-position: center;
-	background-color: white;
-	margin: 0px;
-	border: 0px;
 }
 
 

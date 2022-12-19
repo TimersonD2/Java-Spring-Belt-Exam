@@ -58,6 +58,14 @@
 					<form:errors class="text-danger" path="rating" />
 				</p>
 
+				<p class="edit-row">
+					<form:label class="blue-label" path="imgUrl">Image URL:</form:label>
+					<form:input class="input-bgrnd" path="imgUrl" />
+				</p>
+				<p>
+					<form:errors class="text-danger" path="imgUrl" />
+				</p>
+
 				<p>
 					<form:label class="blue-label" path="description">Thoughts about the show:</form:label>
 					<form:textarea class="thoughts" rows="6" cols="60" path="description" />
