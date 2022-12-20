@@ -65,12 +65,19 @@
 				</p>
 
 				<p>
-					<form:label class="blue-label" path="description">Thoughts about the show:</form:label>
+					<form:label class="blue-label" path="description">Description of the show:</form:label>
 					<form:textarea class="thoughts" rows="6" cols="60" path="description" />
 				</p>
 				<p>
 					<form:errors class="text-danger" path="description" />
 				</p>
+
+		    	<p>
+		   		 	<form:hidden path="likes"/>
+		    	</p>
+		    	<p>
+		   		 	<form:hidden path="disLikes"/>
+		    	</p>
 
 		    	<div class="bot-btn">
 			        <button class="login-btn">Add Show</button>

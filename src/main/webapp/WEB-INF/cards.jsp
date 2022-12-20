@@ -28,6 +28,8 @@
 					<a class="links" href="/viewShow/${show.id}">${show.title}</a>
 					<p class="blue-text">Network: ${show.network}</p>
 					<p class="blue-text">Rating: ${show.rating}</p>
+					<p class="blue-text">Likes: ${show.likes}</p>
+					<p class="blue-text">Dislikes: ${show.disLikes}</p>
 					<img class="show-img" alt="No Immage Available" src="${show.imgUrl}">
 				</div>
 			</c:forEach>

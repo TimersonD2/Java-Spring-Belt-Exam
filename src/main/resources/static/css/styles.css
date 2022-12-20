@@ -73,7 +73,7 @@ input {
 }
 
 table {
-	width:85%;
+	width:100%;
 	border: 6px solid white;
 }
 
@@ -126,8 +126,11 @@ table {
 
 .dash-main {
 	margin-left: 8rem;
-    width: 800px;
+    width: 75%;
     margin-top: 30px;
+    
+	border: 5px solid aqua;
+	border-radius: 10px;
 }
 
 .show-main {
@@ -166,7 +169,7 @@ table {
 .show-card {
 	background-color: black;
 	color: white;
-	height:15rem;
+	height:20rem;
 	width: 15rem;
 	border: 3px solid white;
 	border-radius: 10px;

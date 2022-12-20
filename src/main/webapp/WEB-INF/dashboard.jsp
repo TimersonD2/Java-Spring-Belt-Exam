@@ -44,6 +44,8 @@
 						<th class="tbl-hdr">Network</th>
 						<th class="tbl-hdr">Rating</th>
 						<th class="tbl-hdr">Posted By</th>
+						<th class="tbl-hdr">Likes</th>
+						<th class="tbl-hdr">Dislikes</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -53,6 +55,8 @@
 							<td class="tbl-data"><c:out value="${show.network}"></c:out></td>
 							<td class="tbl-data"><c:out value="${show.rating}"></c:out></td>
 							<td class="tbl-data"><c:out value="${show.user.userName}"></c:out></td>
+							<td class="tbl-data"><c:out value="${show.likes}"></c:out></td>
+							<td class="tbl-data"><c:out value="${show.disLikes}"></c:out></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -36,8 +36,8 @@ public class ShowService {
 	}
 	
 ////	Update A Show
-	public Show updateShow(Show book) {
-		return showRepo.save(book);
+	public Show updateShow(Show show) {
+		return showRepo.save(show);
 	}
 	
 ////	Delete A Show
